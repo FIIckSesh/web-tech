@@ -1,0 +1,25 @@
+body {
+    color: green;
+}
+
+div {
+    width: 35%;
+    text-align:justify;
+}
+
+h1 {
+    color:DodgerBlue
+}
+
+h2 {
+    color:blue;
+    text-align:center;
+}
+
+p {
+    text-indent: 3em;
+}
+
+.asd {
+    color:blue;
+}
