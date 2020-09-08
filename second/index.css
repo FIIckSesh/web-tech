@@ -48,6 +48,11 @@ p > span {
   color:Blue;
 }
 
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+
 #asd {
     color:blue;
     font-size: 8pt;
@@ -73,4 +78,24 @@ li {
 
 li > ul > li {
   list-style-type: lower-greek;
+}
+
+li::before {
+    content: "\20aa "; /* Добавляем перед элементом списка символ в юникоде */
+   }
+
+ul::after {
+   content: "\20ac ";
+}
+
+a:hover {
+  background-color: #F89B4D;
+}
+
+input:read-write {
+  background: #eee;
+}
+
+input:indeterminate + label {
+  background: lime;
 }
