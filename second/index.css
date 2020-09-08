@@ -26,7 +26,7 @@ h2 > a  {
   text-decoration: none;
 }
 
-p {
+div p {
     text-indent: 3em;
     background: #FFE4E1;
     word-spacing: 6px;
