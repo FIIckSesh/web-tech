@@ -1,0 +1,16 @@
+figure.head {
+    background: #5f6a72; /* Цвет фона */
+    padding: 10px; /* Поля вокруг */
+    margin: 0 10px 10px 0; /* Отступы */
+}
+
+figure.hb {
+  background: green; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 10px 0; /* Отступы */
+}
+
+ul > li {
+  float: left;
+  margin: 0px 40px;
+}
