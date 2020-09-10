@@ -15,6 +15,10 @@ ul > li {
   margin: 0px 40px;
 }
 
+li > a {
+  color: black;
+}
+
 ul {
   height: 1.5em;
 }
@@ -27,4 +31,26 @@ footer {
 
 footer > address > a {
   color: black;
+}
+
+#Drift {
+  margin-left: 3em;
+  margin-right: 6em;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 1em;
+  border-spacing: 1em;
+}
+
+main {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+section > h2, section > p {
+  margin-left: 1em;
+}
+
+footer {
+  margin-top: 2em;
 }
