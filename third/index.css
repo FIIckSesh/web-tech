@@ -1,16 +1,30 @@
 figure.head {
     background: #5f6a72; /* Цвет фона */
     padding: 10px; /* Поля вокруг */
-    margin: 0 10px 10px 0; /* Отступы */
+    margin: 0 10px 0px 0; /* Отступы */
 }
 
 figure.hb {
-  background: green; /* Цвет фона */
+  background: MediumVioletRed; /* Цвет фона */
   padding: 10px; /* Поля вокруг */
-  margin: 0 10px 10px 0; /* Отступы */
+  margin: 0 10px 0px 0; /* Отступы */
 }
 
 ul > li {
   float: left;
   margin: 0px 40px;
+}
+
+ul {
+  height: 1.5em;
+}
+
+footer {
+  background: #5f6a72; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 0px 0; /* Отступы */
+}
+
+footer > address > a {
+  color: black;
 }
