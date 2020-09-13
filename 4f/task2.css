@@ -1,0 +1,88 @@
+body {
+  text-align:justify;
+}
+
+.head {
+    background: #5f6a72; /* Цвет фона */
+    padding: 10px; /* Поля вокруг */
+    margin: 0 10px 0px 0; /* Отступы */
+}
+
+.hb {
+  background: MediumVioletRed; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 0px 0; /* Отступы */
+}
+
+ul > li {
+  float: left;
+  margin: 0px 40px;
+}
+
+li > a {
+  color: black;
+}
+
+ul {
+  height: 1.5em;
+}
+
+footer {
+  background: #5f6a72; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 0px 0; /* Отступы */
+}
+
+footer > address > a {
+  color: black;
+}
+
+#Drift {
+  margin-left: 3em;
+  margin-right: 6em;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 1em;
+  border-spacing: 1em;
+}
+
+#Drift > p {
+  margin-right: 1em;
+}
+
+main {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+section > h2, section > p {
+  margin-left: 1em;
+}
+
+
+#bord {
+  border-style: dashed;
+  border-radius: 1em;
+  border-spacing: 1em;
+  margin: 1em 1em 1em 1em;
+}
+
+#bord > p {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+footer {
+  margin-top: 1em;
+}
+
+.sign {
+    float: left; /* Выравнивание по правому краю */
+    border: 1px solid #333; /* Параметры рамки */
+    padding: 7px; /* Поля внутри блока */
+     /* Отступы вокруг */
+    background: #f0f0f0; /* Цвет фона */
+   }
+   .sign figcaption {
+    margin: 0 auto 5px; /* Отступы вокруг абзаца */
+   }

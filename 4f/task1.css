@@ -1,0 +1,64 @@
+body {
+  text-align:justify;
+}
+
+figure.head {
+    background: #5f6a72; /* Цвет фона */
+    padding: 10px; /* Поля вокруг */
+    margin: 0 10px 0px 0; /* Отступы */
+}
+
+figure.hb {
+  background: MediumVioletRed; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 0px 0; /* Отступы */
+}
+
+ul > li {
+  float: left;
+  margin: 0px 40px;
+}
+
+li > a {
+  color: black;
+}
+
+ul {
+  height: 1.5em;
+}
+
+footer {
+  background: #5f6a72; /* Цвет фона */
+  padding: 10px; /* Поля вокруг */
+  margin: 0 10px 0px 0; /* Отступы */
+}
+
+footer > address > a {
+  color: black;
+}
+
+#Drift {
+  margin-left: 3em;
+  margin-right: 6em;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 1em;
+  border-spacing: 1em;
+}
+
+#Drift > p {
+  margin-right: 1em;
+}
+
+main {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+section > h2, section > p {
+  margin-left: 1em;
+}
+
+footer {
+  margin-top: 2em;
+}
