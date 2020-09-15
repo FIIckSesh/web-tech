@@ -1,18 +1,14 @@
 body {
   text-align:justify;
-  /* background-image: url(japan.jpg);
-  background-size: 100%;
-  color: white;
-  font-size: 1em;*/
 }
 
-.head {
+figure.head {
     background: #5f6a72; /* Цвет фона */
     padding: 10px; /* Поля вокруг */
     margin: 0 10px 0px 0; /* Отступы */
 }
 
-.hb {
+figure.hb {
   background: MediumVioletRed; /* Цвет фона */
   padding: 10px; /* Поля вокруг */
   margin: 0 10px 0px 0; /* Отступы */
@@ -20,10 +16,7 @@ body {
 
 ul > li {
   float: left;
-  margin-left: 1em;
-  margin-right: 2em;
-  margin-top: 1em;
-
+  margin: 0px 40px;
 }
 
 li > a {
@@ -31,7 +24,7 @@ li > a {
 }
 
 ul {
-  height: auto;
+  height: 1.5em;
 }
 
 footer {
@@ -66,6 +59,9 @@ section > h2, section > p {
   margin-left: 1em;
 }
 
+footer {
+  margin-top: 2em;
+}
 
 #bord {
   border-style: dashed;
@@ -77,19 +73,4 @@ section > h2, section > p {
 #bord > p {
   margin-right: 1em;
   margin-left: 1em;
-}
-
-footer {
-  margin-top: 1em;
-}
-
-.sign {
-   /* Выравнивание по правому краю */
-  border: 1px solid #333; /* Параметры рамки */
-  padding: 7px; /* Поля внутри блока */
-  /* Отступы вокруг */
-  background: #f0f0f0; /* Цвет фона */
-}
-.sign figcaption {
-  margin: 0 auto 5px; /* Отступы вокруг абзаца */
 }
