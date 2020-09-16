@@ -50,17 +50,13 @@ footer > address > a {
   margin-right: 1em;
 }
 
-main {
-  margin-left: 3em;
-  margin-right: 3em;
-}
 
 section > h2, section > p {
   margin-left: 1em;
 }
 
 footer {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 #bord {
