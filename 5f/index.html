@@ -1,0 +1,253 @@
+	<!DOCTYPE html>
+	<html lang="ru">
+	<head>
+		<title>Form</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				width: 50%;
+				margin: auto;
+				background: Crimson;
+			}
+			input {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				font-style: normal;
+			}
+
+			.fieldset{
+				text-align:left;
+				margin-top: 15px;
+			}
+
+			form{
+				background: white;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			input[type="checkbox"], input[type="radio"] {
+				width: auto;
+			}
+
+			.button-container{
+				width: 30%;
+				text-align: center;
+				margin: auto;
+				margin-top: 15px;
+				margin-bottom: 10px;
+			}
+
+			.modal {
+			    display: none;
+			    position: fixed;
+			    z-index: 1;
+			    padding-top: 60px;
+			    left: 0;
+			    top: 0;
+			    width: 100%; /* Full width */
+			    height: 100%; /* Full height */
+			    overflow: auto; /* Enable scroll if needed */
+			    background-color: rgb(0,0,0); /* Fallback color */
+			    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+			}
+
+			.modal-content {
+			    position: relative;
+			    background-color: white;
+			    margin: auto;
+			    padding: 0;
+			    border: 5px solid gray;
+			    width: 50%;
+			    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			    -webkit-animation-name: animatetop;
+			    -webkit-animation-duration: 0.4s;
+			    animation-name: animatetop;
+			    animation-duration: 0.4s
+			}
+
+			.close {
+			    color: white;
+			    float: right;
+			    font-size: 28px;
+			    font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+			    color: #000;
+			    text-decoration: none;
+			    cursor: pointer;
+			}
+
+			.modal-header {
+			    padding: 2px 16px;
+			    background-color: gray;
+			    color: white;
+			    text-align: center;
+			}
+
+			#modal-body {
+				padding: 2px 16px;
+				font-size: 25px;
+			}
+
+			.modal-footer {
+			    padding: 2px 16px;
+			    background-color: gray;
+			    color: white;
+			    text-align: center;
+			}
+
+			.modal-footer > h3:hover {
+				cursor: pointer
+			}
+
+
+  	</style>
+	</head>
+	<body>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" onclick="onCloseClick()">&times;</span>
+					<h2>Проверьте данные перед отправкой</h2>
+				</div>
+				<div id="modal-body">
+				</div>
+				<div class="modal-footer">
+					<h3>Отправить на сервер</h3>
+				</div>
+			</div>
+		</div>
+
+		<form onsubmit="onSub()">
+			<fieldset>
+				<legend>Личные данные</legend>
+				<main>
+				<label for="ln">Фамилия</label>
+				<input id="ln" type="text" name="ln" placeholder="Чернышов" maxlength="20" autofocus required>
+				<label for="name">Имя</label>
+				<input id="name" type="text" name="name" placeholder="Александр" maxlength="20" required>
+				<label for="sn">Отчество</label>
+				<input id="sn" type="text" name="sn" placeholder="Сергеевич" maxlength="20" required>
+				<label for="mail">Электронная почта</label>
+				<input id="mail" type="email" name="mail" placeholder="alexander@mail.ru" maxlength="20" required>
+				<label for="homepage">Домашняя страница</label>
+				<input id="homepage" type="url" name="homepage" placeholder="www.mypage.com" maxlength="20" required>
+				<label for="date">Дата рождения</label>
+				<input id="date" type="date" name="date"  placeholder="12.12.2012" required>
+				</main>
+			</fieldset>
+
+			<fieldset>
+				<legend> Интересы пользователя</legend>
+				<p><input type="checkbox" id="music-checkbox" oninput="onChecked(1, 'music-checkbox')"> Музыка</p>
+				<div class="hidden" id="1">
+					<fieldset>
+						<p><input type="radio" name="music" value="Фолк" checked> Фолк</p>
+						<p><input type="radio" name="music" value="Нет, блин, фонк"> Нет, блин, фонк</p>
+					</fieldset>
+				</div>
+
+				<p><input type="checkbox" id="books-checkbox" oninput="onChecked(2, 'books-checkbox')"> Книги</p>
+				<div class="hidden" id="2">
+					<fieldset>
+						<p><input type="radio" name="books" value="Манга" checked> Манга</p>
+						<p><input type="radio" name="books" value="Комиксы"> Комиксы</p>
+					</fieldset>
+				</div>
+
+				<p><input type="checkbox"  id="sport-checkbox" oninput="onChecked(3, 'sport-checkbox')" > Спорт</p>
+				<div class="hidden" id="3">
+					<fieldset>
+						<p><input type="radio" name="sport" value="Хоккей" checked> Хоккей</p>
+						<p><input type="radio" name="sport" value="Плавание"> Плавание</p>
+					</fieldset>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend> Предпочтительные цвет и размер шрифта</legend>
+				<div id="example-text">Текст</div>
+				<label for="font-size">Выберете размер текста</label>
+				<input id="size" type="range" name="font-size" min="10" max="60" value="25" oninput="onSizeChanged()">
+				<label for="font-color">Выберете цвет текста:</label>
+				<input type="color" id="color" name="font-color" value="#ff0000" oninput="onColorChanged()">
+			</fieldset>
+
+			<div class="button-container">
+				<input type="submit" value="Отправить">
+			</div>
+		</form>
+
+		<script type="text/javascript">
+		function onCloseClick() {
+			document.getElementById('myModal').style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == document.getElementById('myModal')) {
+				document.getElementById('myModal').style.display = "none";
+			}
+		}
+
+		function onSizeChanged() {
+			document.getElementById('example-text').style.fontSize = document.getElementById("size").value +'px';
+			document.getElementById('modal-body').style.fontSize = document.getElementById("size").value +'px';
+		}
+
+		function onColorChanged() {
+			document.getElementById('example-text').style.color = document.getElementById("color").value;
+			document.getElementById('modal-body').style.color = document.getElementById("color").value;
+		}
+
+		function onChecked(divId, checkboxId) {
+			if (document.getElementById(checkboxId).checked) {
+				document.getElementById(divId).style.display = "block";
+			} else {
+				document.getElementById(divId).style.display = "none";
+			}
+		}
+
+		function onSub() {
+			let fullName = document.getElementById('ln').value + " " +
+			document.getElementById('name').value + " " +
+			document.getElementById('sn').value;
+
+			let email = document.getElementById('mail').value;
+			let homepage = document.getElementById('homepage').value;
+			let birthdate = document.getElementById('date').value;
+			let activities = getActivities();
+
+			document.getElementById('modal-body').innerHTML = fullName + "<br>"
+			+ email + "<br>"
+			+ homepage + "<br>"
+			+ birthdate + "<br>"
+			+ activities;
+
+			document.getElementById('myModal').style.display = "block";
+			event.preventDefault();
+		}
+
+		function getActivities() {
+			let list = "Интересы: ";
+
+			if (document.getElementById("music-checkbox").checked)
+				list+= " " + document.querySelector('input[name="music"]:checked').value + ",";
+
+			if (document.getElementById("books-checkbox").checked)
+				list+= " " + document.querySelector('input[name="books"]:checked').value + ",";
+
+			if (document.getElementById("sport-checkbox").checked)
+				list+= " " + document.querySelector('input[name="sport"]:checked').value + ",";
+
+			return list.slice(0, -1);
+		}
+	  </script>
+	</body>
+	</html>
