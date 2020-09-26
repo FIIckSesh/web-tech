@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA0Compatible" content="ie=edge">
+  <title>Converter</title>
+  <link rel = "stylesheet" href="index.css">
+</head>
+
+<body onload="setNumber();">
+<div class="tbl">
+
+
+  <div class="str">
+    <div class="gr">
+        <label for="usr">c₀:</label>
+        <label for="pwd">a:</label>
+        <label for="pwd">b:</label>
+    </div>
+
+    <div class="am">
+        <input type="text" class="form-control" id="c0" disabled>
+        <input type="text" class="form-control" id="a" disabled>
+        <input type = "text" class="form-control" id="b" disabled>
+    </div>
+
+    <div class="am">
+        <select name="numbers" size="2">
+            <option value="JS" selected="selected" onclick="setNumber()">Число</option>
+            <option value="Java" onclick="setNumbers()">Последовательнось</option>
+        </select>
+
+        <div class="lenght">
+            <label for="lng" class="lng">Длина последовательности:</label>
+            <input type="text" class="lng-line" id="lenght">
+        </div>
+
+        <button class="btn" onclick="update()">Обновить значения</button>
+        <button class="btn" onclick="generate()">Сгенерировать</button>
+        <button class="btn" onclick="cleartext()">Очистить</button>
+    </div>
+
+  </div>
+
+  <textarea type="text" class="psgh" id="psgh" disabled></textarea>
+
+  <canvas id="myChart"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+</div>
+  <script>
+  //  require('./render.js');
+
+
+    var c = 0;
+    var m = 16777216;
+    var b = 101;
+    var c0 = 0;
+    var a = 9;
+    var num = true;
+
+    function update() {
+
+      var date = new Date();
+      var k1 = date.getSeconds();
+      var k2 = date.getMonth() - k1 * k1;
+      var k3 = date.getMilliseconds() - k2;
+
+      c0 = Math.abs((k1 * k2 + k3) % m);
+      c = c0;
+      a = Math.abs((4 * (k1 + k2 * k3) + 1) % m);
+      b = Math.abs((2 * (k1  - k3) + 1) % m);
+      document.getElementById('c0').value = c0;
+      document.getElementById('a').value = a;
+      document.getElementById('b').value = b;
+
+    }
+
+    function generate() {
+        if (num == true) {
+            var number = (a * c + b) % m;
+            c = number;
+            document.getElementById('psgh').value += number + ' ';
+        } else {
+            cleartext();
+            var count = document.getElementById('lenght').value;
+            count++;
+            for (let i = 0; i < count - 1; i++) {
+              var number = (a * c + b) % m;
+              c = number;
+              document.getElementById('psgh').value += number + ' ';
+            }
+        }
+        updateChart();
+    }
+
+    function cleartext() {
+      document.getElementById('psgh').value = "";
+    }
+
+    function setNumber() {
+      document.getElementById('lenght').value = "1";
+      lenght.setAttribute("disabled", "disabled");
+      num = true;
+      с = с0;
+      cleartext()
+    }
+
+    function setNumbers() {
+        document.getElementById('lenght').value = "";
+        lenght.removeAttribute("disabled", "disabled");
+        num = false;
+        c = c0;
+        cleartext()
+    }
+
+
+    function updateChart() {
+        var str = document.getElementById('psgh').value;
+
+        var otr = [];
+        var index = [];
+        var arr = str.split(' ');
+
+        for( var i = 0; i < 100; i++) {
+          otr[i] = 0;
+          index[i] = i;
+        }
+
+        for (var iter = 0; iter < 100; iter++) {
+            for( var i = 0, j = 0 ; i < 100, j < 16777216 ; i++, j+= 167772) {
+
+                if (arr[iter] > j && arr[iter] < j + 167772) {
+                    otr[i]++;
+                }
+            }
+        }
+
+        for( var i = 0; i < 100; i++) {
+          otr[i] = otr[i] / 100;
+        }
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+              labels: index,
+              datasets: [{
+                  label: 'Гистограмма относительных частот попаданий',
+                  backgroundColor: 'rgb(255, 99, 132)',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: otr
+              }]
+          },
+
+          // Configuration options go here
+          options: {}
+      });
+    }
+
+
+  </script>
+</body>
+</html>
