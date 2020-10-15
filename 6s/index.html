@@ -1,169 +1,213 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA0Compatible" content="ie=edge">
-  <title>Converter</title>
-  <link rel = "stylesheet" href="index.css">
-</head>
+	<!DOCTYPE html>
+	<html lang="ru">
+	<head>
+		<title>Form</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>test</title>
+	  <style>
 
-<body onload="setNumber();">
-<div class="tbl">
+	   fieldset {
+	    border: 4px double black; /* Параметры границы */
+	    background: #00BFFF; /* Цвет фона */
+	    padding: 10px; /* Поля вокруг текста */
+	   }
 
+		 body {
+		 	width: 60%;
+		 	margin: auto;
+		 }
 
-  <div class="str">
-    <div class="gr">
-        <label for="usr">c₀:</label>
-        <label for="pwd">a:</label>
-        <label for="pwd">b:</label>
-    </div>
+		 input {
+		 	width: 100%;
+		 	padding: 12px 20px;
+		 	margin: 8px 0;
+		 	box-sizing: border-box;
+		 }
 
-    <div class="am">
-        <input type="text" class="form-control" id="c0" disabled>
-        <input type="text" class="form-control" id="a" disabled>
-        <input type = "text" class="form-control" id="b" disabled>
-    </div>
+		 #results {
+		 	display: none;
+		     width: 100%;
+		     height: auto;
+		 }
 
-    <div class="am">
-        <select name="numbers" size="2">
-            <option value="JS" selected="selected" onclick="setNumber()">Число</option>
-            <option value="Java" onclick="setNumbers()">Последовательнось</option>
-        </select>
+		 input[type="checkbox"], input[type="radio"] {
+		 	width: auto;
+		 }
 
-        <div class="lenght">
-            <label for="lng" class="lng">Длина последовательности:</label>
-            <input type="text" class="lng-line" id="lenght">
-        </div>
+	  </style>
+	</head>
+	<body>
 
-        <button class="btn" onclick="update()">Обновить значения</button>
-        <button class="btn" onclick="generate()">Сгенерировать</button>
-        <button class="btn" onclick="cleartext()">Очистить</button>
-    </div>
+		<script src="scripts.js"></script>
+		<form onsubmit="checkAnswers()">
 
-  </div>
+			<h1>Вопрос 1</h1>
+			<fieldset>
+				<p><h4>Допускается ли работать в спецодежде с короткими или засученными рукавами в электроустановках напряжением до 1000 В без снятия напряжения в летний период?</h4></p>
+				<p><input id="q1" type="radio" value="Разрешается только с допускающим." name="q1" required> Разрешается только с допускающим.</p>
+				<p><input type="radio" value="Разрешается только с производителем работ." name="q1"> Разрешается только с производителем работ.</p>
+				<p><input type="radio" value="Разрешается члену бригады с группой не ниже III." name="q1"> Разрешается члену бригады с группой не ниже III.</p>
+				<p><input type="radio" value="Не разрешается." name="q1"> Не разрешается.</p>
+		 </fieldset>
 
-  <textarea type="text" class="psgh" id="psgh" disabled></textarea>
+		 	<h1>Вопрос 2</h1>
+		  <fieldset>
+				<p><h4>Какие из перечисленных мероприятий не относятся к техническим мероприятиям, обеспечивающим безопасность работ в электроустановках?</h4></p>
+				<p><input id="q2" class="q2" type="checkbox" value=" Наложение заземлений"> Наложение заземлений</p>
+				<p><input class="q2" type="checkbox" value=" Надзор во время работы."> Надзор во время работы.</p>
+				<p><input class="q2" type="checkbox" value=" Вывешивание указательных плакатов."> Вывешивание указательных плакатов.</p>
+				<p><input class="q2" type="checkbox" value=" Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов."> Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов.</p>
+		 </fieldset>
 
-  <canvas id="myChart"></canvas>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		 <h1>Вопрос 3</h1>
+		 <fieldset>
+				<p><h4>Кому производитель работ (наблюдающий) должен сдавать наряд-допуск ежедневно по окончании работ в электроустановках с постоянным оперативным персоналом?</h4></p>
+				<input id="q3" type="text" name="text-answer" required>
+		 </fieldset>
 
+		 <h1>Вопрос 4</h1>
+		<fieldset>
+				<p><h4>Какую группу по электробезопасности должны иметь работники из числа оперативного персонала, единолично обслуживающие электроустановки напряжением выше 1000 В?</h4></p>
+				<input id="q4" type="number" name="text-answer" required>
+		</fieldset>
 
-</div>
-  <script>
-  //  require('./render.js');
+		<h1>Вопрос 5</h1>
+		<fieldset>
+				<p><h4>Сопоставьте разряды и их обязанности</h4></p>
+				<p><select id="q5" class="q5" required>
+    			<option value="">Выберите разряд</option>
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+					<option value="4">4</option>
+				</select> - Выполнение мелких технических поручений.</p>
 
+    			<p><select class="q5" required>
+    			<option value="">Выберите разряд</option>
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+					<option value="4">4</option>
+				</select> - Ответсвтенность за ТБ, выполнение сложных поручений.</p>
 
-    var c = 0;
-    var m = 16777216;
-    var b = 101;
-    var c0 = 0;
-    var a = 9;
-    var num = true;
+    			<p><select class="q5" required>
+    			<option value="">Выберите разряд</option>
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+					<option value="4">4</option>
+				</select> - Возможность принимать роль руководителя.</p>
+		</fieldset>
 
-    function update() {
+    			<input id="check-button" type="submit" value="Отправить">
+    			<div id="results"><h5>Результаты теста</h5></div>
 
-      var date = new Date();
-      var k1 = date.getSeconds();
-      var k2 = date.getMonth() - k1 * k1;
-      var k3 = date.getMilliseconds() - k2;
+		</form>
+	<script>
+	function checkAnswers() {
 
-      c0 = Math.abs((k1 * k2 + k3) % m);
-      c = c0;
-      a = Math.abs((4 * (k1 + k2 * k3) + 1) % m);
-      b = Math.abs((2 * (k1  - k3) + 1) % m);
-      document.getElementById('c0').value = c0;
-      document.getElementById('a').value = a;
-      document.getElementById('b').value = b;
+		// кол-во вопросов
+		const answersNum = 5;
 
-    }
+		// кол-во правильных ответов
+		let rightAnswersNum = 0;
 
-    function generate() {
-        if (num == true) {
-            var number = (a * c + b) % m;
-            c = number;
-            document.getElementById('psgh').value += number + ' ';
-        } else {
-            cleartext();
-            var count = document.getElementById('lenght').value;
-            count++;
-            for (let i = 0; i < count - 1; i++) {
-              var number = (a * c + b) % m;
-              c = number;
-              document.getElementById('psgh').value += number + ' ';
-            }
-        }
-        updateChart();
-    }
+		// массив правильных ответов
+		const rightAnswers = [
+			["Разрешается члену бригады с группой не ниже III."],
+			[" Надзор во время работы.", " Вывешивание указательных плакатов."],
+			["РУКОВОДИТЕЛЮ"],
+			["3"],
+			["1", "3", "4"]];
 
-    function cleartext() {
-      document.getElementById('psgh').value = "";
-    }
+		// массив ответов пользователя
+		let userAnswers = [
+			[],
+			[],
+			[],
+			[],
+			[]];
 
-    function setNumber() {
-      document.getElementById('lenght').value = "1";
-      lenght.setAttribute("disabled", "disabled");
-      num = true;
-      с = с0;
-      cleartext()
-    }
+		for (let i = 1; i <= answersNum; i++) {
 
-    function setNumbers() {
-        document.getElementById('lenght').value = "";
-        lenght.removeAttribute("disabled", "disabled");
-        num = false;
-        c = c0;
-        cleartext()
-    }
+			//определяем тип вопроса
+			let type = document.getElementById("q" + i).type;
 
+			switch (type) {
+				case "radio":
+					userAnswers[i-1] = getRadioAnswer(i);
+					break;
+				case "checkbox":
+					userAnswers[i-1] = getCheckboxAnswer(i);
+					break;
+				case "text":
+					userAnswers[i-1] = getTextAnswer(i);
+					break;
+				case "number":
+					userAnswers[i-1] = getTextAnswer(i);
+					break;
+				case "select-one":
+					userAnswers[i-1] = getSelectAnswer(i);
+					break;
+				default:
+					console.log( "Новый тип вопроса" );
 
-    function updateChart() {
-        var str = document.getElementById('psgh').value;
+			}
 
-        var otr = [];
-        var index = [];
-        var arr = str.split(' ');
-
-        for( var i = 0; i < 100; i++) {
-          otr[i] = 0;
-          index[i] = i;
-        }
-
-        for (var iter = 0; iter < 100; iter++) {
-            for( var i = 0, j = 0 ; i < 100, j < 16777216 ; i++, j+= 167772) {
-
-                if (arr[iter] > j && arr[iter] < j + 167772) {
-                    otr[i]++;
-                }
-            }
-        }
-
-        for( var i = 0; i < 100; i++) {
-          otr[i] = otr[i] / 100;
-        }
-
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
-
-          // The data for our dataset
-          data: {
-              labels: index,
-              datasets: [{
-                  label: 'Гистограмма относительных частот попаданий',
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: otr
-              }]
-          },
-
-          // Configuration options go here
-          options: {}
-      });
-    }
+			let results = document.getElementById('results');
 
 
-  </script>
-</body>
-</html>
+			if (JSON.stringify(userAnswers[i-1]) == JSON.stringify(rightAnswers[i-1]))	{
+				results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i +' - верно.</p>');
+				rightAnswersNum++;
+			} else {
+				results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i +' - неверно.<br>Правильный ответ: '
+					+ rightAnswers[i-1] + '<br>Ваш ответ: ' + userAnswers[i-1] + '</p>');
+			}
+		}
+
+		let results = document.getElementById('results');
+		results.insertAdjacentHTML('beforeend', '<p> ' + rightAnswersNum +' из ' + answersNum +' вопросов - верно</p>');
+
+		event.preventDefault();
+		document.getElementById('results').style.display = "block";
+		document.getElementById('check-button').disabled = true;
+	}
+
+	function getRadioAnswer(i) {
+		//отмеченные radio buttons
+		let arr = [document.querySelector('input[name="q' + i + '"]:checked').value];
+		return arr;
+	}
+
+	function getCheckboxAnswer(i) {
+		//все checkboxes нужного вопроса
+		let allPositions = document.getElementsByClassName("q" + i);
+
+		//отбираем отмеченные
+		let arr = [];
+		for (let i = 0; i < allPositions.length; i++) {
+			if (allPositions[i].checked)
+				arr.push(allPositions[i].value);
+		}
+
+		return arr;
+	}
+
+	function getTextAnswer(i) {
+		let arr = [document.getElementById("q" + i).value.toUpperCase()];
+		return arr;
+	}
+
+	function getSelectAnswer(i) {
+		let allPositions = document.getElementsByClassName("q" + i);
+		let values = [];
+		for (let i = 0; i < allPositions.length; i++) {
+				values.push(allPositions[i].value.toString());
+		}
+		return values;
+	}
+	</script>
+	</body>
+	</html>
