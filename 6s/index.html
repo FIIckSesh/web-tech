@@ -168,7 +168,20 @@
 		}
 
 		let results = document.getElementById('results');
-		results.insertAdjacentHTML('beforeend', '<p> ' + rightAnswersNum +' из ' + answersNum +' вопросов - верно</p>');
+		let textNum ="Неудовлетворительно";
+
+		switch (rightAnswersNum) {
+			case 5:
+				textNum = "Отлично";
+				break;
+			case 4:
+				textNum = "Хорошо";
+				break;
+			case 3:
+				textNum = "Удовлетворительно";
+				break;
+		}
+		results.insertAdjacentHTML('beforeend', '<p> ' + rightAnswersNum +' из ' + answersNum +' вопросов - верно' + ', оценка: ' + textNum + '</p>');
 
 		event.preventDefault();
 		document.getElementById('results').style.display = "block";
