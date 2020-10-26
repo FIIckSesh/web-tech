@@ -26,7 +26,7 @@
       this.g = random(0, 255);
       this.b = random(0, 255);
       this.alpha = 1;
-      this.color = `rgba(${this.r}, ${this.g}, ${this.b}, ${this.alpha})`;
+      this.color = 'rgba(' + this.r + ', ' + this.g + ', ' + this.b + ', ' + this.alpha + ')';
     }
 
     draw(x, y) {
