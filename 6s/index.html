@@ -1,226 +1,264 @@
-	<!DOCTYPE html>
-	<html lang="ru">
-	<head>
-		<title>Form</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<title>test</title>
-	  <style>
+<!DOCTYPE html>
+<html lang="ru">
 
-	   fieldset {
-	    border: 4px double black; /* Параметры границы */
-	    background: #00BFFF; /* Цвет фона */
-	    padding: 10px; /* Поля вокруг текста */
-	   }
+<head>
+	<title>Form</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>test</title>
+	<style>
+		fieldset {
+			border: 4px double black;
+			/* Параметры границы */
+			background: #00BFFF;
+			/* Цвет фона */
+			padding: 10px;
+			/* Поля вокруг текста */
+		}
 
-		 body {
-		 	width: 60%;
-		 	margin: auto;
-		 }
+		body {
+			width: 60%;
+			margin: auto;
+		}
 
-		 input {
-		 	width: 100%;
-		 	padding: 12px 20px;
-		 	margin: 8px 0;
-		 	box-sizing: border-box;
-		 }
+		input {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}
 
-		 #results {
-		 	display: none;
-		     width: 100%;
-		     height: auto;
-		 }
+		#results {
+			display: none;
+			width: 100%;
+			height: auto;
+		}
 
-		 input[type="checkbox"], input[type="radio"] {
-		 	width: auto;
-		 }
+		input[type="checkbox"],
+		input[type="radio"] {
+			width: auto;
+		}
+	</style>
+</head>
 
-	  </style>
-	</head>
-	<body>
+<body>
 
-		<script src="scripts.js"></script>
-		<form onsubmit="checkAnswers()">
+	<script src="scripts.js"></script>
+	<form onsubmit="checkAnswers()">
 
-			<h1>Вопрос 1</h1>
-			<fieldset>
-				<p><h4>Допускается ли работать в спецодежде с короткими или засученными рукавами в электроустановках напряжением до 1000 В без снятия напряжения в летний период?</h4></p>
-				<p><input id="q1" type="radio" value="Разрешается только с допускающим." name="q1" required> Разрешается только с допускающим.</p>
-				<p><input type="radio" value="Разрешается только с производителем работ." name="q1"> Разрешается только с производителем работ.</p>
-				<p><input type="radio" value="Разрешается члену бригады с группой не ниже III." name="q1"> Разрешается члену бригады с группой не ниже III.</p>
-				<p><input type="radio" value="Не разрешается." name="q1"> Не разрешается.</p>
-		 </fieldset>
-
-		 	<h1>Вопрос 2</h1>
-		  <fieldset>
-				<p><h4>Какие из перечисленных мероприятий не относятся к техническим мероприятиям, обеспечивающим безопасность работ в электроустановках?</h4></p>
-				<p><input id="q2" class="q2" type="checkbox" value=" Наложение заземлений"> Наложение заземлений</p>
-				<p><input class="q2" type="checkbox" value=" Надзор во время работы."> Надзор во время работы.</p>
-				<p><input class="q2" type="checkbox" value=" Вывешивание указательных плакатов."> Вывешивание указательных плакатов.</p>
-				<p><input class="q2" type="checkbox" value=" Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов."> Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов.</p>
-		 </fieldset>
-
-		 <h1>Вопрос 3</h1>
-		 <fieldset>
-				<p><h4>Кому производитель работ (наблюдающий) должен сдавать наряд-допуск ежедневно по окончании работ в электроустановках с постоянным оперативным персоналом?</h4></p>
-				<input id="q3" type="text" name="text-answer" required>
-		 </fieldset>
-
-		 <h1>Вопрос 4</h1>
+		<h1>Вопрос 1</h1>
 		<fieldset>
-				<p><h4>Какую группу по электробезопасности должны иметь работники из числа оперативного персонала, единолично обслуживающие электроустановки напряжением выше 1000 В?</h4></p>
-				<input id="q4" type="number" name="text-answer" required>
+			<p>
+			<h4>Допускается ли работать в спецодежде с короткими или засученными рукавами в электроустановках напряжением до 1000 В без снятия напряжения в летний период?</h4>
+			</p>
+			<p><input id="q1" type="radio" value="Разрешается только с допускающим." name="q1" required="required">
+				Разрешается только с допускающим.</p>
+			<p><input type="radio" value="Разрешается только с производителем работ." name="q1">
+				Разрешается только с производителем работ.</p>
+			<p><input type="radio" value="Разрешается члену бригады с группой не ниже III." name="q1">
+				Разрешается члену бригады с группой не ниже III.</p>
+			<p><input type="radio" value="Не разрешается." name="q1">
+				Не разрешается.</p>
+		</fieldset>
+
+		<h1>Вопрос 2</h1>
+		<fieldset>
+			<p>
+			<h4>Какие из перечисленных мероприятий не относятся к техническим мероприятиям, обеспечивающим безопасность работ в электроустановках?</h4>
+			</p>
+			<p><input id="q2" class="q2" type="checkbox" value=" Наложение заземлений">
+				Наложение заземлений</p>
+			<p><input class="q2" type="checkbox" value=" Надзор во время работы.">
+				Надзор во время работы.</p>
+			<p><input class="q2" type="checkbox" value=" Вывешивание указательных плакатов.">
+				Вывешивание указательных плакатов.</p>
+			<p><input class="q2" type="checkbox" value=" Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов.">
+				Принятие мер против ошибочного или самопроизвольного включения коммутационных аппаратов.</p>
+		</fieldset>
+
+		<h1>Вопрос 3</h1>
+		<fieldset>
+			<p>
+			<h4>Кому производитель работ (наблюдающий) должен сдавать наряд-допуск ежедневно по окончании работ в электроустановках с постоянным оперативным персоналом?</h4>
+			</p>
+			<input id="q3" type="text" name="text-answer" required="required">
+		</fieldset>
+
+		<h1>Вопрос 4</h1>
+		<fieldset>
+			<p>
+			<h4>Какую группу по электробезопасности должны иметь работники из числа оперативного персонала, единолично обслуживающие электроустановки напряжением выше 1000 В?</h4>
+			</p>
+			<input id="q4" type="number" name="text-answer" required="required">
 		</fieldset>
 
 		<h1>Вопрос 5</h1>
 		<fieldset>
-				<p><h4>Сопоставьте разряды и их обязанности</h4></p>
-				<p><select id="q5" class="q5" required>
-    			<option value="">Выберите разряд</option>
-    			<option value="1">1</option>
-    			<option value="2">2</option>
-    			<option value="3">3</option>
+			<p>
+			<h4>Сопоставьте разряды и их обязанности</h4>
+			</p>
+			<p>
+				<select id="q5" class="q5" required="required">
+					<option value="">Выберите разряд</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
 					<option value="4">4</option>
-				</select> - Выполнение мелких технических поручений.</p>
+				</select>
+				- Выполнение мелких технических поручений.
+			</p>
 
-    			<p><select class="q5" required>
-    			<option value="">Выберите разряд</option>
-    			<option value="1">1</option>
-    			<option value="2">2</option>
-    			<option value="3">3</option>
+			<p>
+				<select class="q5" required="required">
+					<option value="">Выберите разряд</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
 					<option value="4">4</option>
-				</select> - Ответсвтенность за ТБ, выполнение сложных поручений.</p>
+				</select>
+				- Ответсвтенность за ТБ, выполнение сложных поручений.
+			</p>
 
-    			<p><select class="q5" required>
-    			<option value="">Выберите разряд</option>
-    			<option value="1">1</option>
-    			<option value="2">2</option>
-    			<option value="3">3</option>
+			<p>
+				<select class="q5" required="required">
+					<option value="">Выберите разряд</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
 					<option value="4">4</option>
-				</select> - Возможность принимать роль руководителя.</p>
+				</select>
+				- Возможность принимать роль руководителя.
+			</p>
 		</fieldset>
 
-    			<input id="check-button" type="submit" value="Отправить">
-    			<div id="results"><h5>Результаты теста</h5></div>
+		<input id="check-button" type="submit" value="Отправить">
+		<div id="results">
+			<h5>Результаты теста</h5>
+		</div>
 
-		</form>
+	</form>
 	<script>
-	function checkAnswers() {
+		function checkAnswers() {
 
-		// кол-во вопросов
-		const answersNum = 5;
+			// кол-во вопросов
+			const answersNum = 5;
 
-		// кол-во правильных ответов
-		let rightAnswersNum = 0;
+			// кол-во правильных ответов
+			let rightAnswersNum = 0;
 
-		// массив правильных ответов
-		const rightAnswers = [
-			["Разрешается члену бригады с группой не ниже III."],
-			[" Надзор во время работы.", " Вывешивание указательных плакатов."],
-			["РУКОВОДИТЕЛЮ"],
-			["3"],
-			["1", "3", "4"]];
+			// массив правильных ответов
+			const rightAnswers = [
+				["Разрешается члену бригады с группой не ниже III."],
+				[
+					" Надзор во время работы.", " Вывешивание указательных плакатов."
+				],
+				["РУКОВОДИТЕЛЮ"],
+				["3"],
+				[
+					"1", "3", "4"
+				]
+			];
 
-		// массив ответов пользователя
-		let userAnswers = [
-			[],
-			[],
-			[],
-			[],
-			[]];
+			// массив ответов пользователя
+			let userAnswers = [
+				[],
+				[],
+				[],
+				[],
+				[]
+			];
 
-		for (let i = 1; i <= answersNum; i++) {
+			for (let i = 1; i <= answersNum; i++) {
 
-			//определяем тип вопроса
-			let type = document.getElementById("q" + i).type;
+				//определяем тип вопроса
+				let type = document.getElementById("q" + i).type;
 
-			switch (type) {
-				case "radio":
-					userAnswers[i-1] = getRadioAnswer(i);
-					break;
-				case "checkbox":
-					userAnswers[i-1] = getCheckboxAnswer(i);
-					break;
-				case "text":
-					userAnswers[i-1] = getTextAnswer(i);
-					break;
-				case "number":
-					userAnswers[i-1] = getTextAnswer(i);
-					break;
-				case "select-one":
-					userAnswers[i-1] = getSelectAnswer(i);
-					break;
-				default:
-					console.log( "Новый тип вопроса" );
+				switch (type) {
+					case "radio":
+						userAnswers[i - 1] = getRadioAnswer(i);
+						break;
+					case "checkbox":
+						userAnswers[i - 1] = getCheckboxAnswer(i);
+						break;
+					case "text":
+						userAnswers[i - 1] = getTextAnswer(i);
+						break;
+					case "number":
+						userAnswers[i - 1] = getTextAnswer(i);
+						break;
+					case "select-one":
+						userAnswers[i - 1] = getSelectAnswer(i);
+						break;
+					default:
+						console.log("Новый тип вопроса");
 
+				}
+
+				let results = document.getElementById('results');
+
+				if (JSON.stringify(userAnswers[i - 1]) == JSON.stringify(rightAnswers[i - 1])) {
+					results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i + ' - верно.</p>');
+					rightAnswersNum++;
+				} else {
+					results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i + ' - неверно.<br>Правильный ответ: ' + rightAnswers[i - 1] + '<br>Ваш ответ: ' + userAnswers[i - 1] + '</p>');
+				}
 			}
 
 			let results = document.getElementById('results');
+			let textNum = "Неудовлетворительно";
 
-
-			if (JSON.stringify(userAnswers[i-1]) == JSON.stringify(rightAnswers[i-1]))	{
-				results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i +' - верно.</p>');
-				rightAnswersNum++;
-			} else {
-				results.insertAdjacentHTML('beforeend', '<p> Вопрос ' + i +' - неверно.<br>Правильный ответ: '
-					+ rightAnswers[i-1] + '<br>Ваш ответ: ' + userAnswers[i-1] + '</p>');
+			switch (rightAnswersNum) {
+				case 5:
+					textNum = "Отлично";
+					break;
+				case 4:
+					textNum = "Хорошо";
+					break;
+				case 3:
+					textNum = "Удовлетворительно";
+					break;
 			}
+			results.insertAdjacentHTML('beforeend', '<p> ' + rightAnswersNum + ' из ' + answersNum + ' вопросов - верно, оценка: ' + textNum + '</p>');
+
+			event.preventDefault();
+			document.getElementById('results').style.display = "block";
+			document.getElementById('check-button').disabled = true;
 		}
 
-		let results = document.getElementById('results');
-		let textNum ="Неудовлетворительно";
-
-		switch (rightAnswersNum) {
-			case 5:
-				textNum = "Отлично";
-				break;
-			case 4:
-				textNum = "Хорошо";
-				break;
-			case 3:
-				textNum = "Удовлетворительно";
-				break;
-		}
-		results.insertAdjacentHTML('beforeend', '<p> ' + rightAnswersNum +' из ' + answersNum +' вопросов - верно' + ', оценка: ' + textNum + '</p>');
-
-		event.preventDefault();
-		document.getElementById('results').style.display = "block";
-		document.getElementById('check-button').disabled = true;
-	}
-
-	function getRadioAnswer(i) {
-		//отмеченные radio buttons
-		let arr = [document.querySelector('input[name="q' + i + '"]:checked').value];
-		return arr;
-	}
-
-	function getCheckboxAnswer(i) {
-		//все checkboxes нужного вопроса
-		let allPositions = document.getElementsByClassName("q" + i);
-
-		//отбираем отмеченные
-		let arr = [];
-		for (let i = 0; i < allPositions.length; i++) {
-			if (allPositions[i].checked)
-				arr.push(allPositions[i].value);
+		function getRadioAnswer(i) {
+			//отмеченные radio buttons
+			let arr = [document.querySelector('input[name="q' + i + '"]:checked').value];
+			return arr;
 		}
 
-		return arr;
-	}
+		function getCheckboxAnswer(i) {
+			//все checkboxes нужного вопроса
+			let allPositions = document.getElementsByClassName("q" + i);
 
-	function getTextAnswer(i) {
-		let arr = [document.getElementById("q" + i).value.toUpperCase()];
-		return arr;
-	}
+			//отбираем отмеченные
+			let arr = [];
+			for (let i = 0; i < allPositions.length; i++) {
+				if (allPositions[i].checked)
+					arr.push(allPositions[i].value);
+			}
 
-	function getSelectAnswer(i) {
-		let allPositions = document.getElementsByClassName("q" + i);
-		let values = [];
-		for (let i = 0; i < allPositions.length; i++) {
+			return arr;
+		}
+
+		function getTextAnswer(i) {
+			let arr = [document.getElementById("q" + i).value.toUpperCase()];
+			return arr;
+		}
+
+		function getSelectAnswer(i) {
+			let allPositions = document.getElementsByClassName("q" + i);
+			let values = [];
+			for (let i = 0; i < allPositions.length; i++) {
 				values.push(allPositions[i].value.toString());
+			}
+			return values;
 		}
-		return values;
-	}
 	</script>
-	</body>
-	</html>
+</body>
+
+</html>
